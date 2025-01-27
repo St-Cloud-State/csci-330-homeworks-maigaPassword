@@ -1,44 +1,0 @@
-Script started on 2025-01-27 04:20:44+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="90" LINES="20"]
-[0;32m@maigaPassword [0m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/HomeWork1 [0;36m([1;31mmain[0;36m) [0m$ cat main.lisp 
-;; Define variables for global scope
-(defvar list1 nil)
-(defvar list2 nil)
-(defvar list3 nil)
-(defvar result1 nil)
-(defvar result2 nil)
-(defvar result3 nil)
-
-;; Construct lists
-(setq list1 (cons 'A (cons 'B (cons 'X nil)))) ; (A B X)
-(setq list2 (cons 'A (cons (cons 'B (cons 'X nil)) nil))) ; (A (B X))
-(setq list3 (cons (cons 'A (cons 'B (cons 'X nil))) nil)) ; ((A B X))
-
-;; Extract results
-(setq result1 (car (cdr (cdr list1)))) ; Extract 'X' from (A B X)
-(setq result2 (car (cdr (car (cdr list2))))) ; Extract 'X' from (A (B X))
-(setq result3 (car (cdr (cdr (car list3))))) ; Extract 'X' from ((A B X))
-
-;; Display results
-(format t "Result 1: ~A~%" result1)
-(format t "Result 2: ~A~%" result2)
-(format t "Result 3: ~A~%" result3)
-[0;32m@maigaPassword [0m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/HomeWork1 [0;36m([1;31mmain[0;36m) [0m$ cat main.lisp [A[0;32m@maigaPassword [0m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/HomeWork1 [0;36m([1;31mmain[0;36m) [0m$ [5Pexit
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat main.lisp [A[0;32m@maigaPassword [0m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/HomeWork1 [0;36m([1;31mmain[0;36m) [0m$ [K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat main.lisp [A[0;32m@maigaPassword [0m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/HomeWork1 [0;36m([1;31mmain[0;36m) [0m$ [5Pexit
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[Ksbcl --load main.lisp
-This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
-More information about SBCL is available at <http://www.sbcl.org/>.
-
-SBCL is free software, provided as is, with absolutely no warranty.
-It is mostly in the public domain; some portions are provided under
-BSD-style licenses.  See the CREDITS and COPYING files in the
-distribution for more information.
-Result 1: X
-Result 2: X
-Result 3: X
-* ^Z
-[1]+  Stopped                 sbcl --load main.lisp
-[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/HomeWork1 [0;36m([1;31mmain[0;36m) [0m$ exx[Kit
-exit
-There are stopped jobs.
-[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/HomeWork1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/HomeWork1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/HomeWork1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/HomeWork1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/HomeWork1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/HomeWork1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/HomeWork1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassw
