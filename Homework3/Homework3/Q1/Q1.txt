@@ -1,0 +1,81 @@
+Script started on 2025-02-18 19:04:44+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="178" LINES="24"]
+[0;32m@maigaPassword [0m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q1 [0;36m([1;31mmain[0;36m) [0m$ exitquit[K[K[K[Kclear./a.out g++ QuickSort.cpp -std=gnu++17./a.out [K[K[K[K[K[K[K[K[Kcat QuickSort.cpp 
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+void swap(int* a, int* b) {
+    // Swap two numbers
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
+int partition(int arr[], int low, int high) {
+    // Partition the array
+    int pivot = arr[high];
+    int i = low;
+
+    for (int j = low; j < high; j++) {
+        if (arr[j] <= pivot) {
+            swap(&arr[i], &arr[j]); // Swap if element is smaller
+            i++;
+        }
+    }
+
+    swap(&arr[i], &arr[high]); // Swap pivot to correct position
+    return i; // Return pivot index
+}
+
+void quickSortIterative(int arr[], int first, int last) {
+    // Iterative QuickSort using stack
+    stack<pair<int, int>> stack;
+    stack.push({first, last});
+
+    while (!stack.empty()) {
+        auto [low, high] = stack.top();
+        stack.pop();
+
+        int pivot_pos = partition(arr, low, high);
+
+        if (pivot_pos - 1 > low) {
+            stack.push({low, pivot_pos - 1}); // Push left part
+        }
+
+        if (pivot_pos + 1 < high) {
+            stack.push({pivot_pos + 1, high}); // Push right part
+        }
+    }
+}
+
+void printArray(int arr[], int size) {
+    // Print array elements
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    cout << "Original array: ";
+    printArray(arr, n);
+
+    quickSortIterative(arr, 0, n - 1);
+
+    cout << "Sorted array: ";
+    printArray(arr, n);
+
+    return 0;
+}
+[0;32m@maigaPassword [0m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q1 [0;36m([1;31mmain[0;36m) [0m$ cat QuickSort.cpp exit[K[Kclear./a.out g++ QuickSort.cpp -std=gnu++17
+[0;32m@maigaPassword [0m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q1 [0;36m([1;31mmain[0;36m) [0m$ g++ QuickSort.cpp -std=gnu++17[12Pcat QuickSort.cpp exit[K[Kclear./a.out 
+Original array: 10 7 8 9 1 5 
+Sorted array: 1 5 7 8 9 10 
+[0;32m@maigaPassword [0m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q1 [0;36m([1;31mmain[0;36m) [0m$ ./a.out g++ QuickSort.cpp -std=gnu++17[12Pcat QuickSort.cpp exit[K
+exit
+
+Script done on 2025-02-18 19:05:21+00:00 [COMMAND_EXIT_CODE="0"]

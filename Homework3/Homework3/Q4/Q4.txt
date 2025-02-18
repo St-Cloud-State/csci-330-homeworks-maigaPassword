@@ -1,0 +1,59 @@
+Script started on 2025-02-18 19:16:07+00:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="178" LINES="20"]
+[0;32m@maigaPassword [0m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q4 [0;36m([1;31mmain[0;36m) [0m$ cat Q4.lisp 
+;;function to insert an element into a sorted list
+(defun insert (item sorted)
+  (cond ((null sorted) (list item))
+        ((<= item (car sorted)) (cons item sorted))
+        (t (cons (car sorted) (insert item (cdr sorted))))))
+
+;; Insertion sort function
+(defun insertion-sort (lst)
+  (if (null lst)
+      nil
+      (insert (car lst) (insertion-sort (cdr lst)))))
+
+;;Different Testings
+(print (insertion-sort '(4 2 7 4 5)))  
+(print (insertion-sort '(3 4 8 7 1)))  
+(print (insertion-sort '(-5 -2 -3 -1 -4)))  
+(print (insertion-sort '()))  
+[0;32m@maigaPassword [0m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q4 [0;36m([1;31mmain[0;36m) [0m$ sbcl --load Q4.lisp 
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+
+(2 4 4 5 7) 
+(1 3 4 7 8) 
+(-5 -4 -3 -2 -1) 
+NIL 
+* ^Z
+[1]+  Stopped                 sbcl --load Q4.lisp
+[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q4 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+There are stopped jobs.
+[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q4 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q4 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q4 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q4 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q4 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q4 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q4 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@maigaPassword [1;31m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q4 [0;36m([1;31mmain[0;36m) [0m$ clear
+[H[2J[3J[0;32m@maigaPassword [0m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q4 [0;36m([1;31mmain[0;36m) [0m$ clear[1Pexitsbcl --load Q4.lisp [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kscript Q4.txt 
+Script started, file is Q4.txt
+[0;32m@maigaPassword [0m➜ [1;34m/workspaces/csci-330-homeworks-maigaPassword/Homework3/Q4 [0;36m([1;31mmain[0;36m) [0m$ exitcat Q3.lisp [8Pexit./a.out g++ QuickSort.cpp -std=gnu++17[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcat QuickSort.cpp [K[K[K[K[K[K[K[K[K[K[K[K[K[KQ4.lisp 
+;;function to insert an element into a sorted list
+(defun insert (item sorted)
+  (cond ((null sorted) (list item))
+        ((<= item (car sorted)) (cons item sorted))
+        (t (cons (car sorted) (insert item (cdr sorted))))))
+
+;; Insertion sort function
+(defun insertion-sort (lst)
+  (if (null lst)
+      nil
+      (insert (car lst) (insertion-sort (cdr lst)))))
+
+;;Different Testings
+(print (insertion-sort '(4 2 7 4 5)))  
+(print (insertion-sort '(3 4 8 7 1)))  
+(print (insertion-sort '(-5 -2 -3 -1 -4)))  
+(print (insertion-sort '()))  
+[0;32m@maigaPassword [0m➜ [1;34m/workspaces/csci-330-homeworks-maigaPas
